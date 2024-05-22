@@ -1,0 +1,14 @@
+[
+    {
+        "title": "The tragedy of King Lear",
+        "author": "William Shakespeare",
+        "isbn": "9781585102655",
+        "status": "read"
+    },
+    {
+        "title": "Der letzte Wunsch",
+        "author": "Andrzej Sapkowski",
+        "isbn": "9783423209939",
+        "status": "unread"
+    }
+]
