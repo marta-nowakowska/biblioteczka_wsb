@@ -1,20 +1,20 @@
 import json
-import os
+from pathlib import Path
 
-import json
-import os
+LIBRARY_FILE = Path("../data/library.json")
+WISHLIST_FILE = Path("../data/wishlist.json")
 
-def load_data(file):
-    if os.path.exists(file):
-        with open(file, 'r') as f:
-            data = json.load(f)
-            if isinstance(data, list):
-                return data
-            else:
-                return []
-    return []
 
-def save_data(file, data):
-    with open(file, 'w') as f:
-        json.dump(data, f, indent=4)
+def load_data(file: Path):
+    if not file.exists():
+        return []
 
+    data = json.loads(file.read_text())
+    if isinstance(data, list):
+        return data
+    else:
+        return []
+
+
+def save_data(file: Path, data):
+    file.write_text(json.dumps(data, indent=4))
